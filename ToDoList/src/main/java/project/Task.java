@@ -23,6 +23,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return description + " [" + (this.complete ? "Completed" : "Pending") + "]";
+        return description + " [" + (this.complete ? "Completed" : "Incomplete") + "]";
     }
 }

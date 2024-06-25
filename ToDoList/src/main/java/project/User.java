@@ -1,14 +1,12 @@
 package project;
 
-import java.util.List;
-
 public class User {
     private String name;
     private TaskList taskList;
 
-    public User(String name, TaskList taskList) {
+    public User(String name) {
         this.name = name;
-        this.taskList = taskList;
+        this.taskList = new TaskList();
     }
 
     public String getName() {
@@ -27,9 +25,16 @@ public class User {
         this.taskList = taskList;
     }
 
-    public void addTask(Task task) {
-        this.taskList.addTask(task);
+    public void addTask(String description) {
+        Task task = new Task(description);
+        taskList.addTask(task);
     }
 
+    public void markTaskAsComplete(int index) {
+        this.taskList.markTaskAsCompleted(index);
+    }
 
+    public void printAllTasks() {
+        this.taskList.printTasks();
+    }
 }
